@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage, session storage (és cookies)</title>
+</head>
+<body>
+    <h1>Storage példa</h1>
+    
+    <label for="storageType">Válaszd ki a storage típusát:</label>
+    <select id="storageType">
+        <option value="localStorage">Local Storage</option>
+        <option value="sessionStorage">Session Storage</option>
+    </select>
+    
+    <label for="key">Key:</label>
+    <input type="text" id="key">
+    
+    <label for="value">Value:</label>
+    <input type="text" id="value">
+    
+    <button id="saveData">Mentés</button>
+    
+    <div id="displayData"></div>
+    
+    <button id="clearLocalStorage">Local Storage Törlés</button>
+    <button id="clearSessionStorage">Session Storage Törlés</button>
+
+    
+    <script src="feladat.js"></script>
+</body>
+</html>

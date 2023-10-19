@@ -1,0 +1,49 @@
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-container div{   
+    width: 350px;
+    height: 180px;
+    margin: 5px;
+}
+
+:root{
+    --lila: purple;
+    --vilagoskek: lightblue;
+    --cyan: cyan;
+    --sotetkek: rgb(72, 72, 104);
+    --bordo: rgb(87, 45, 45);
+    --rozsaszin: rgb(230, 161, 161);
+    --sotetlila: rgb(182, 88, 150);
+    --narancs: rgb(184, 93, 57);
+}
+
+#lila{
+    background-color: var(--lila);
+}
+#vilagoskek{
+    background-color: var(--vilagoskek);
+}
+#cyan{
+    background-color: var(--cyan);
+}
+#sotetkek{
+    background-color: var(--sotetkek);
+}
+#bordo{
+    background-color: var(--bordo);
+}
+#rozsaszin{
+    background-color: var(--rozsaszin);
+}
+#sotetlila{
+    background-color: var(--sotetlila);
+}
+#narancs{
+    background-color: var(--narancs);
+}
+
+

@@ -1,0 +1,228 @@
+:root{
+    --menuszin: white;
+    --kartyakhatterszine: white;
+    --szovegszine: black;
+    --atlatszodivhattere: rgba(0, 0, 0, 0.9);
+    --atlatszohattervilagosm: rgba(0, 0, 0, 0.7);
+    --atlatszohattersotetm: rgb(255, 255, 255, 0.7);
+    --menuatlatszohatter: rgba(0, 0, 0, 0.9);
+}
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+
+}
+
+body{
+    background-image: url(empty\ desks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--szovegszine);
+}
+
+/* div{
+    border: 1px solid var(--szovegszine);
+   
+} */
+
+#atlatszodiv{
+    margin: 10px 40px;  
+    padding: 30px 60px;
+    background-color: transparent;
+    background: var(--atlatszodivhattere);
+    border: 2px solid var(--atlatszodivhattere);
+    border-radius: 25px;
+}
+
+header{
+    font-size: 80px;
+    font-weight: bold;
+}
+
+#cim{
+    background-color: var(--kartyakhatterszine);
+    padding-top: 33px;
+    height: 47px;
+    position:relative;
+    width: 100%;
+    text-align:center;
+    line-height:40px;
+    border: 0px solid var(--atlatszodivhattere);
+    border-radius: 20px 0 0 20px;
+}
+
+#cim:after{
+    content:"";
+    position:absolute;
+    height:0;
+    width:0;
+    left:100%;
+    top:0;
+    border: 40px solid transparent;
+    border-left: 3.5rem solid var(--kartyakhatterszine);
+
+}
+
+
+.hknnapok{
+    font-size: 20px;
+    margin: 3%;
+}
+.hvnapok{
+    font-size: 20px;
+    margin: 3%;
+}
+
+
+
+.napok{
+    font-size: 50px;
+    font-weight: bold;
+    background-color: var(--atlatszohattersotetm);
+    padding: 0px 15px; 
+    margin: 0px 10px 15px 15px;
+    border: 2px solid var(--atlatszodivhattere);
+    border-radius: 50px 20px;
+}
+
+.orak{
+    text-align: left;
+    padding: 5px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    background-color: var(--kartyakhatterszine);
+    width: 60%;
+    margin: 10px auto;
+    border: 2px solid var(--atlatszodivhattere);
+    border-radius: 20px;
+
+}
+
+#DarkMode{
+    background-color: transparent; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    background-image: url(cartoon-moon-icon.png);
+    width: 3.5em;
+    height: 3.5em;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    color: var(--kartyakhatterszine); 
+    font-size: 16px; 
+
+}
+
+
+#menuIcon {
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    color: var(--menuszin); 
+    background-image: url(3524659.png);
+    width: 3em;
+    height: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+
+}
+
+#menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--menuatlatszohatter);
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--kartyakhatterszine);
+}
+
+#closeBtn {
+    font-size: 24px;
+    color: var(--menuszin);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.font-style1 {
+    font-family: Arial, sans-serif;
+}
+
+.font-style2 {
+    font-family: 'Times New Roman', serif;
+}
+
+.font-style3 {
+    font-family: 'Courier New', monospace;
+}
+
+ul{
+    margin-top: 65px;
+    color: var(--menuszin);
+}
+
+@media screen and (max-width: 600px) {
+    header{
+        font-size: 41px;
+    }
+    .napok{
+        font-size: 35px;
+    }
+    .hknnapok{
+        font-size: 15px;
+    }
+    .hvnapok{
+        font-size: 15px;
+    }
+    .orak{
+        font-size: 20px;
+    }
+    #cim{
+        height: 21px;
+        line-height: 15px;
+        margin-bottom: 20px;
+        padding-top: 34px;
+        border-radius: 10px 0 0 10px;
+        
+    }
+    #cim:after{
+        content:"";
+        position:absolute;
+        height:0;
+        width:0;
+        left:100%;
+        top:0;
+        border: 28px solid transparent;
+        border-left: 3.5rem solid var(--kartyakhatterszine);
+    
+    }
+
+
+    
+}
