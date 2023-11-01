@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Orarend2.css">
+    <title>Órarend2</title>
+
+</head>
+<body>
+
+    <div id="menuIcon"></div>
+    <div id="menu">
+        <span id="closeBtn">✕</span>
+        <ul>
+            <li>Betü szín:<input id="favcolor" type="color"/></li>
+            <li>Betű típusa:
+                <select id="font-style-selector">
+                    <option value="font-style1">Arial</option>
+                    <option value="font-style2">Times New Roman</option>
+                    <option value="font-style3">Courier New</option>
+                </select>
+            </li>
+            <button onclick="Onchange()">Mentés</button>
+        </ul>
+    </div>
+    <button id="DarkMode" onclick="DarkModeChange()"></button>
+    <div id="atlatszodiv">
+        <div id="cim"><header>Órarend</header></div>
+            <div id="hkn" class="flex-container">
+                <div class="hknnapok" >
+                    <div class="napok">Hétfő</div>
+                    <div class="orak">8:00 <br> Matek</div>                 
+                    <div class="orak">8:55 <br> Tesi</div>
+                    <div class="orak">9:55 <br> Angol</div>
+                    <div class="orak">10:50 <br> Fizika</div>
+                    <div class="orak">11:45 <br> Kémia</div>
+                    <div class="orak">12:45 <br> Magyar</div>
+
+                </div>
+                <div class="hknnapok">
+                    <div class="napok">Kedd</div>
+                    <div class="orak">8:00 <br> Töri</div>
+                    <div class="orak">8:55 <br> Info</div>
+                    <div class="orak">9:55 <br> Biosz</div>
+                    <div class="orak">10:50 <br> Matek</div>
+                    <div class="orak">11:45 <br> Tesi</div>
+                    <div class="orak">12:45 <br> Angol</div>
+                    <div class="orak">13:40 <br> Fizika</div>
+                </div>
+                <div class="hknnapok">
+                    <div class="napok">Szerda</div>
+                    <div class="orak">8:00 <br> Kémia</div>
+                    <div class="orak">8:55 <br> Magyar</div>
+                    <div class="orak">9:55 <br> Töri</div>
+                    <div class="orak">10:50 <br> Info</div>
+                    <div class="orak">11:45 <br> Biosz</div>
+                    <div class="orak">12:45 <br> Matek</div>
+                </div>
+                <div class="hknnapok">
+                    <div class="napok">Csütörtök</div>
+                    <div class="orak">8:00 <br> Tesi</div>
+                    <div class="orak">8:55 <br> Angol</div>
+                    <div class="orak">9:55 <br> Fizika</div>
+                    <div class="orak">10:50 <br> Kémia</div>
+                    <div class="orak">11:45 <br> Magyar</div>
+                    <div class="orak">12:45 <br> Töri</div>
+                    <div class="orak">13:40 <br> Info</div>
+                </div>
+                <div class="hknnapok">
+                    <div class="napok">Péntek</div>
+                    <div class="orak">8:00 <br> Biosz</div>
+                    <div class="orak">8:55 <br> Matek</div>
+                    <div class="orak">9:55 <br> Tesi</div>
+                    <div class="orak">10:50 <br> Angol</div>
+                    <div class="orak">11:45 <br> Fizika</div>
+                    <div class="orak">12:45 <br> Kémia</div>
+                </div>
+                
+            </div>
+            <div id="hv" class="flex-container">
+                <div class="hvnapok">
+                    <div class="napok">Szombat</div>
+                    <div class="orak">8:00 <br> Magyar</div>
+                    <div class="orak">8:55 <br> Töri</div>
+                    <div class="orak">9:55 <br> Info</div>
+                    <div class="orak">10:50 <br> Biosz</div>
+                    <div class="orak">11:45 <br> Matek</div>
+                    <div class="orak">12:45 <br> Tesi</div>
+                </div>
+                <div class="hvnapok">
+                    <div class="napok">Vasárnap</div>
+                    <div class="orak">8:00 <br> Kémia</div>
+                    <div class="orak">8:55<br> Magyar</div>
+                    <div class="orak">9:55 <br> Töri</div>
+                    <div class="orak">10:50 <br> Info</div>
+                    <div class="orak">11:45 <br> Biosz</div>
+                    <div class="orak">12:45 <br> Matek</div>
+                </div>
+            </div>
+
+            
+    </div>
+
+    <script src="Orarend2.js"></script>
+</body>
+</html>
+
