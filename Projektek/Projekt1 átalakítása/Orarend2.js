@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function loalStorageEllenorzes() {
+    function loadStorageEllenorzes() {
         const storedData = localStorage.getItem("projectData");
         if (storedData) {
             const parsedData = JSON.parse(storedData);
@@ -45,15 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function adatHozzaadas() {
         const selectedColor = favcolorInput.value;
         data.szovegszine = selectedColor;
+        blackWhiteModMentesALocalStoragebe();
+        tartalomRendereles();
     }
 
     function adatTorle() {
         data.szovegszine = "black";
         data.fontstyle = "Arial";
+        blackWhiteModMentesALocalStoragebe();
+        tartalomRendereles();
     }
 
     function blackWhiteModValtas() {
         data.darkMode = !data.darkMode;
+        blackWhiteModMentesALocalStoragebe();
         tartalomRendereles();
     }
 
@@ -62,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function blackWhiteModBeallitasALocalStoragebol() {
-        loalStorageEllenorzes();
+        loadStorageEllenorzes();
     }
 
     function localStorageInicializalas() {
