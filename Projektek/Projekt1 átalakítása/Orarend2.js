@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         darkMode: false,
     };
 
-    const tantargyak = {
+    const orak = {
         matek: "Matek",
         tesi: "Tesi",
         angol: "Angol",
@@ -36,13 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
         szerda: "Szerda",
         csutortok: "Csütörtök",
         pentek: "Péntek",
-        szombat: "Szombat",
-        vasarnap: "Vasárnap",
     };
 
-    function tartalomRendereles() {
+    function DarkModeChange() {
         root.style.setProperty("--szovegszine", data.szovegszine);
-        document.body.style.fontFamily = data.fontstyle;
         if (data.darkMode) {
             root.style.setProperty("--kartyakhatterszine", "black");
             root.style.setProperty("--szovegszine", "white");
@@ -75,13 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
         data.szovegszine = "black";
         data.fontstyle = "Arial";
         blackWhiteModMentesALocalStoragebe();
-        tartalomRendereles();
+        DarkModeChange();
     }
 
     function blackWhiteModValtas() {
         data.darkMode = !data.darkMode;
         blackWhiteModMentesALocalStoragebe();
-        tartalomRendereles();
+        DarkModeChange();
     }
 
     function blackWhiteModMentesALocalStoragebe() {
@@ -94,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function localStorageInicializalas() {
         blackWhiteModBeallitasALocalStoragebol();
-        tartalomRendereles();
+        DarkModeChange();
     }
 
     menuIcon.addEventListener("click", function () {
@@ -110,9 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
     darkModeButton.addEventListener("click", function () {
         blackWhiteModValtas();
         blackWhiteModMentesALocalStoragebe();
+        DarkModeChange();
     });
 
-    localStorageInicializalas();
 
     function generateHTML() {
         for (let nap in napok) {
@@ -125,10 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
             napNev.textContent = napok[nap];
             napDiv.appendChild(napNev);
 
-            for (let tantargy in tantargyak) {
+            for (let tantargy in orak) {
                 const tantargyDiv = document.createElement("div");
                 tantargyDiv.classList.add("orak");
-                tantargyDiv.textContent = tantargyak[tantargy];
+                tantargyDiv.textContent = orak[tantargy];
                 napDiv.appendChild(tantargyDiv);
             }
         }
@@ -142,7 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
         generateHTML();
     });
 
-    
     generateHTML();
+    localStorageInicializalas();
+
 
 });
