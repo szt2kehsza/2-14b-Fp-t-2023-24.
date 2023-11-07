@@ -20,14 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
         darkMode: false,
     };
 
-    const orak = {
-        matek: "Matek",
-        tesi: "Tesi",
-        angol: "Angol",
-        fizika: "Fizika",
-        kemia: "Kémia",
-        magyar: "Magyar",
-        tori: "Töri",
+    const idopontok = {
+        elso: "8:00",
+        masodik: "8:55 ",
+        harmadik: "9:55",
+        negyedik: "10:50",
+        otodik: "11:45",
+        hatodik: "12:45",
+        hetedik: "13:40",
+    }
+
+    const tantargyak = {
+        elso: "Matek",
+        masodik: "Tesi",
+        harmadik: "Angol",
+        negyedik: "Fizika",
+        otodik: "Kémia",
+        hatodik: "Magyar",
+        hetedik: "Töri",
     };
 
     const napok = {
@@ -122,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
             napNev.textContent = napok[nap];
             napDiv.appendChild(napNev);
 
-            for (let tantargy in orak) {
-                const tantargyDiv = document.createElement("div");
-                tantargyDiv.classList.add("orak");
-                tantargyDiv.textContent = orak[tantargy];
-                napDiv.appendChild(tantargyDiv);
+            for (let idopont in idopontok) {
+                const idopontDiv = document.createElement("div");
+                idopontDiv.classList.add("orak");
+                idopontDiv.innerHTML = `${idopontok[idopont]}<br>${tantargyak[idopont]}`;
+                napDiv.appendChild(idopontDiv);
             }
         }
     }
