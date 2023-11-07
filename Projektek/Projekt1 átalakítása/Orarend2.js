@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const favcolorInput = document.getElementById("favcolor");
     const fontStyleSelector = document.getElementById("font-style-selector");
     const darkModeButton = document.getElementById("DarkMode");
+    
     const root = document.documentElement;
+
+    const mentesBtn = document.getElementById("mentesBtn");
+
+    const hknDiv = document.getElementById("hkn");
+    const hvDiv = document.getElementById("hv");
 
     const data = {
         szovegszine: "black",
@@ -14,13 +20,29 @@ document.addEventListener("DOMContentLoaded", function () {
         darkMode: false,
     };
 
+    const tantargyak = {
+        matek: "Matek",
+        tesi: "Tesi",
+        angol: "Angol",
+        fizika: "Fizika",
+        kemia: "Kémia",
+        magyar: "Magyar",
+        tori: "Töri",
+    };
+
+    const napok = {
+        hetfo: "Hétfő",
+        kedd: "Kedd",
+        szerda: "Szerda",
+        csutortok: "Csütörtök",
+        pentek: "Péntek",
+        szombat: "Szombat",
+        vasarnap: "Vasárnap",
+    };
+
     function tartalomRendereles() {
         root.style.setProperty("--szovegszine", data.szovegszine);
         document.body.style.fontFamily = data.fontstyle;
-        const orakElemek = document.getElementsByClassName("orak");
-        for (let i = 0; i < orakElemek.length; i++) {
-            orakElemek[i].style.fontFamily = data.fontstyle;
-        }
         if (data.darkMode) {
             root.style.setProperty("--kartyakhatterszine", "black");
             root.style.setProperty("--szovegszine", "white");
@@ -42,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function adatHozzaadas() {
+    function adatHozzaadasa() {
         const selectedColor = favcolorInput.value;
         data.szovegszine = selectedColor;
-        blackWhiteModMentesALocalStoragebe();
-        tartalomRendereles();
+
+        generateHTML();
     }
 
     function adatTorle() {
@@ -91,4 +113,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     localStorageInicializalas();
+
+    function generateHTML() {
+        for (let nap in napok) {
+            const napDiv = document.createElement("div");
+            napDiv.classList.add("hknnapok");
+            hknDiv.appendChild(napDiv);
+
+            const napNev = document.createElement("div");
+            napNev.classList.add("napok");
+            napNev.textContent = napok[nap];
+            napDiv.appendChild(napNev);
+
+            for (let tantargy in tantargyak) {
+                const tantargyDiv = document.createElement("div");
+                tantargyDiv.classList.add("orak");
+                tantargyDiv.textContent = tantargyak[tantargy];
+                napDiv.appendChild(tantargyDiv);
+            }
+        }
+    }
+
+    mentesBtn.addEventListener("click", function () {
+        const selectedColor = favcolorInput.value;
+        const selectedFont = fontstyleSelector.value;
+        data.szovegszine = selectedColor;
+        data.fontstyle = selectedFont;
+        generateHTML();
+    });
+
+    
+    generateHTML();
+
 });
